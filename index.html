@@ -1,0 +1,108 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <title>C++ on Sea</title>
+
+    <link rel="stylesheet" href="reveal.js/css/reveal.css">
+    <link rel="stylesheet" href="reveal.js/css/theme/black.css">
+
+    <style>
+        .reveal .slides section .fragment.highlight-current-code {
+            opacity: 1;
+            visibility: inherit;
+        }
+
+        .reveal .slides section .fragment.highlight-current-code.current-fragment {
+            background: #555a5f;
+            color: #ffffff;
+        }
+
+        .highlighted-already {
+            background: #555a5f;
+            color: #ffffff;
+        }
+
+        .no-border {
+            background: none !important;
+            border: none !important;
+            box-shadow: none !important;
+        }
+
+        div.quote {
+            max-width: 70%;
+            margin: auto;
+        }
+
+        div.attribution {
+            font-style: italic;
+            font-size: x-small;
+        }
+
+        .flex {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+        }
+
+        .w50 {
+            flex: 0 1 50%;
+        }
+
+        .w30 {
+            flex: 0 1 30%;
+        }
+
+        .w100 {
+            flex: 0 1 100%;
+        }
+    </style>
+
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="reveal.js/lib/css/zenburn.css">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        const link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+</head>
+<body>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <h2>TODO: name this and the &lt;title&gt;</h2>
+        </section>
+    </div>
+</div>
+
+<script src="reveal.js/lib/js/head.min.js"></script>
+<script src="reveal.js/js/reveal.js"></script>
+
+
+<script>
+    Reveal.initialize({
+        history: true,
+        transition: 'fade',
+        slideNumber: true,
+        width: 1280,
+        height: 720,
+        dependencies: [
+            {src: 'reveal.js/plugin/markdown/marked.js'},
+            {src: 'reveal.js/plugin/markdown/markdown.js'},
+            {src: 'reveal.js/plugin/notes/notes.js', async: true},
+            {
+                src: 'reveal.js/plugin/highlight/highlight.js',
+                async: true,
+                callback: () => hljs.initHighlightingOnLoad()
+            }
+        ]
+    });
+</script>
+</body>
+</html>
