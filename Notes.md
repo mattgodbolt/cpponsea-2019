@@ -57,18 +57,65 @@ really exist in our community - but I think the perception of it does)
     * crash course in what the machine's doing?
       * cache/memory hand-wave
 
-* Vague plan? TELL A STORY!
-  * Hi! I'm me. I'm accidentally a verb
-    * Backstory? Turbo version?
-  * Why I love C++ and everything it brings
-    * nod to other languages in this space
-  * But...like most coders the bit I love the most is <1% of my job
+### Random interjection
+Write a raytracer? Idiomatic but bad?
+
+Benchmarks, whole program run time to illustrate where things matter.
+Pass by value pass by reference etc. Probably too much work to do in this case.
+
+## Vague plan? 
+TELL A STORY!
+* Hi! I'm me. I'm accidentally a verb
+  * Backstory? Turbo version?
+* Why I love C++ and everything it brings
+  * nod to other languages in this space
+* But...like most coders the bit I love the most is <1% of my job
   * Just getting stuff done!
   * Write code, test code, repeat. Check in. Handle compiler error. Repeat etc
-  * Every now and then, some nugget of cool stuff needed
-    * example? byteswapping? das's example showing my cool intrinsics/inline asm unnecessary?
+* Every now and then, some nugget of cool stuff needed
+  * example? byteswapping? das's example showing my cool intrinsics/inline asm unnecessary?
   * Optimizing a FIX engine?
-  * Conclusion
-    * What do I want people to take away?
-      * Trust the compiler
-      * Knowing what it does is not required, but is FUN and instructive
+* Conclusion
+  * What do I want people to take away?
+    * Trust the compiler
+    * Knowing what it does is not required, but is FUN and instructive
+    
+    
+# Optimization Tales, or How I Learned To Stop Worrying and (mostly) Trust the Compiler 
+- Part -1
+- started with asm, Z80, 6502 and ARM
+- learned C to program a MUD
+- slowly learned C++
+  - on early ARM and then x86 (first job)
+- spent many years arguing over ++i vs i++ - which is faster?
+- thinking about registers, writing embedded trickery like
+  - dreamcast code?
+- while debugging realised compiler was doing some clever things but never thought to check them
+- around the time of starting new job in trading, started exploring compiler output, CE was born
+- So, after 5 years of staring at CE output, what can I trust my compiler to do?
+- Part zero - basics
+  - benchmarks? asm primer?
+- Part one! What can I trust it to do?
+  - ++i vs i++
+  - hoisting variables? NAME YOUR VARS well, don't care about how they're then used later. Good example of this? My old
+    code and some new style code?
+  - range for, auto, all that?
+  - multiply cases?
+  - But I have these cool intrinsics! I love to use them!!
+    - show compiler will take your code and generate the instructions
+    - bit swap
+    - clz
+    - ctz
+  - vectorizing
+  - devirtualising?
+  - LTO
+- Part two, what can't it do?
+  - preclude (all) copying objects, though move stuff mitigates
+  - optimize virtual calls (much)
+  - lay out memory for me
+- Part three: the future!
+  - `[[likely]]` (?)
+- Call to action!
+  - We code in C++ as it gives us the best of everything: multi-paradigm, high level, low-level and in principal total
+    control
+  - We have tools to take advantage of this control
