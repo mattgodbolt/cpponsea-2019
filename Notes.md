@@ -82,6 +82,9 @@ TELL A STORY!
     
     
 # Optimization Tales, or How I Learned To Stop Worrying and (mostly) Trust the Compiler 
+# "What everyone should know about what your compiler is doing for you"? (thanks Phil)
+# "What everyone should know about how amazing your compiler is"?
+# "What everyone should know what compilers can do"?
 - Part -1
 - started with asm, Z80, 6502 and ARM
 - learned C to program a MUD
@@ -119,3 +122,39 @@ TELL A STORY!
   - We code in C++ as it gives us the best of everything: multi-paradigm, high level, low-level and in principal total
     control
   - We have tools to take advantage of this control
+  
+  
+```
+struct v
+{
+    float x; float y; float z;
+    inline const float operator[](int i) const {
+        return *((float*)this + i);
+    }
+};
+```
+- maybe consider less UBey thing?
+- old style code? `inline`? https://godbolt.org/z/cGJcJC shows compiler 
+  
+# What Everyone Should Know About How Amazing Compilers Are
+
+We use them every day, but how often do we stop to think about the kinds of amazing
+things our compilers do for us? Modern compilers are a feat of engineering and in this
+talk Matt will demonstrate just a few of the very cunning things they do for you.
+Matt will concentrate on the output of the compiler: the tricks they use to generate
+efficient, optimized assembler code. 
+
+Writing clear, readable code that's also efficient hinges on being able to trust your
+compiler's code generator. By the end of this talk, you'll be be able to read assembly
+well enough to be able to appreciate your compiler, and have an understanding of what 
+it can - and can't - optimize for you. 
+
+Although Matt has covered some of these topics before, there will be plenty of new
+material to enjoy.
+
+### About Matt
+
+Matt is a C++ programmer and occasional verb. He loves writing efficient code and sharing his passion about how 
+computers work under the hood. An engineer at Coinbase, he has previously worked at a trading firm, on mobile apps at 
+Google, run a C++ tools company and spent more than a decade making console games. When not tinkering on Compiler 
+Explorer, Matt enjoys working on emulators for old 8-bit computer hardware.
