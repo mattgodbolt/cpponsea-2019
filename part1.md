@@ -1,44 +1,57 @@
+<!-- .slide: data-background="./images/bg/walker.jpg" -->
+<!-- .element: class="white-bg" -->
 # Hello!
 
 I'm accidentally a verb <!-- .element: class="fragment" -->
 
 
+<!-- .slide: data-background="./images/bg/walker.jpg" -->
+<!-- .element: class="white-bg" -->
 ![CE logo](images/CE.svg) <!-- .element: class="no-border stretch" -->
 
 
+<!-- .slide: data-background="./images/bg/weave.jpg" -->
 ```cpp
-int total(const std::vector<int> &v) {
+int sum(const vector<int> &v)
+{
   int total = 0; 
   for (size_t i = 0; i < v.size(); ++i)
+  {
     total += v[i];
+  }
   return total;
 }
 ``` 
-<!-- .element: class="w50" -->
+<!-- .element: class="w55" -->
 ```cpp
-int total(const std::vector<int> &v) {
+int sum(const vector<int> &v)
+{
   int total = 0; 
-  for (auto val : v)
+  for (auto val : v) 
+  {
     total += val;
+  }
   return total;
 }
 ```
-<!-- .element: class="w50" -->
-
-<!-- http://localhost:10240/z/MDr-w8 -->
+<!-- .element: class="w45" -->
 
 
-### Why should I care
-
-* performance is not something you put in afterwards
-* premature optimization is the root
+Demo here!
+<!-- iframe src="http://localhost:10240/z/MDr-w8">/<iframe>
 
 
-"Premature optimization is the root of all evil."
-<!-- element: class="quote" -->
+<!-- .slide: data-background="./images/bg/weave.jpg" -->
+<!-- .element: class="white-bg" -->
+### Why should I care?
 
-Donald E. Knuth
-[Structured Programming With `go to` Statements](https://web.archive.org/web/20130731202547/http://pplab.snu.ac.kr/courses/adv_pl05/papers/p261-knuth.pdf)
+<div>
+"Premature optimization is the root of all evil." <!-- .element: class="quote" -->
+</div>
+
+<div>
+Donald E. Knuth [Structured Programming With `go to` Statements](https://web.archive.org/web/20130731202547/http://pplab.snu.ac.kr/courses/adv_pl05/papers/p261-knuth.pdf)
+</div><!-- .element: class="attribution" -->
 
 
 "Programmers waste enormous amounts of time thinking about, or worrying about, the speed of noncritical parts of their
@@ -49,6 +62,8 @@ all evil. Yet we should not pass up our opportunities in that critical 3%."
 
 Donald E. Knuth
 [Structured Programming With `go to` Statements](https://web.archive.org/web/20130731202547/http://pplab.snu.ac.kr/courses/adv_pl05/papers/p261-knuth.pdf)
+
+<!-- highglight the "when debugging and maint" bit? Emphasise talk is about showing you can be concerned about perf but mostly leave it to compiler -->
 
 ---
 
