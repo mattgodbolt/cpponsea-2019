@@ -158,3 +158,27 @@ Matt is a C++ programmer and occasional verb. He loves writing efficient code an
 computers work under the hood. An engineer at Coinbase, he has previously worked at a trading firm, on mobile apps at 
 Google, run a C++ tools company and spent more than a decade making console games. When not tinkering on Compiler 
 Explorer, Matt enjoys working on emulators for old 8-bit computer hardware.
+
+
+------------------
+
+after dreaming...
+
+* intro
+* why do we write in C++
+* we write code to compile, right?
+* show daft code optimized
+* show compiler is smarter
+* oh, what else am I not thinking about?
+
+---
+
+* What are compilers NOT good at?
+  * Mind-reading
+    * if you call an external function, compiler has to assume worst
+      - pure
+      - non-pure
+      - LTO mitigations
+  * Ignoring what you specifically asked them to do
+    * structure layout
+    * virtual methods (although...)

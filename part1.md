@@ -12,6 +12,9 @@ I'm accidentally a verb <!-- .element: class="fragment" -->
 
 <!-- .slide: data-background="./images/bg/weave.jpg" -->
 ```cpp
+// setup
+  #include <vector>
+  using namespace std;
 int sum(const vector<int> &v)
 {
   int total = 0; 
@@ -24,6 +27,9 @@ int sum(const vector<int> &v)
 ``` 
 <!-- .element: class="w55" -->
 ```cpp
+// setup
+  #include <vector>
+  using namespace std;
 int sum(const vector<int> &v)
 {
   int total = 0; 
