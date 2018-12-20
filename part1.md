@@ -1,13 +1,15 @@
 <!-- .slide: data-background="./images/bg/walker.jpg" -->
-<!-- .element: class="white-bg" -->
+<div>
 # Hello!
 
 I'm accidentally a verb <!-- .element: class="fragment" -->
+</div><!-- .element: class="white-bg" -->
 
 
 <!-- .slide: data-background="./images/bg/walker.jpg" -->
-<!-- .element: class="white-bg" -->
-![CE logo](images/CE.svg) <!-- .element: class="no-border stretch" -->
+<div>
+![CE logo](images/CE.svg) <!-- .element: class="no-border stretch white-bg" -->
+</div><!-- .element: class="white-bg" -->
 
 
 <!-- .slide: data-background="./images/bg/weave.jpg" -->
@@ -43,13 +45,42 @@ int sum(const vector<int> &v)
 <!-- .element: class="w45" -->
 
 
+<!-- .slide: data-background="./images/bg/4340253422_53edf549b4_o.jpg" -->
+# Assembly!?
+<!-- .element: class="white-bg" -->
+
+
+<!-- .slide: data-background="./images/bg/4340253422_53edf549b4_o.jpg" -->
+<div>
+### Registers
+- `rax` (return value) 
+- `rdi` (1st param) 
+- `rsi` (2nd param) 
+- `rdx` (3rd)
+- `rbx` `rcx` `rbp` `r8-r15` `rsp`
+- `xmm0` - `xmm15` (`ymm`... `zmm`...)
+</div><!-- .element: class="white-bg" -->
+
+
+<!-- .slide: data-background="./images/bg/4340253422_53edf549b4_o.jpg" -->
+```x86asm
+  mov eax, edi              ; eax = edi
+  add eax, 1234             ; eax += 1234
+  cmp eax, 5678             ; compare eax with 5678...
+  jne label                 ; ...if not equal, go to "label"
+  xor eax, eax              ; eax = 0
+label:
+  ret                       ; return
+```
+
+
 Demo here!
 <!-- iframe src="http://localhost:10240/z/MDr-w8">/<iframe>
 
 
 <!-- .slide: data-background="./images/bg/weave.jpg" -->
-<!-- .element: class="white-bg" -->
-### Why should I care?
+<div>
+<h3>Why should I care?</h3>
 
 <div>
 "Premature optimization is the root of all evil." <!-- .element: class="quote" -->
@@ -58,16 +89,22 @@ Demo here!
 <div>
 Donald E. Knuth [Structured Programming With `go to` Statements](https://web.archive.org/web/20130731202547/http://pplab.snu.ac.kr/courses/adv_pl05/papers/p261-knuth.pdf)
 </div><!-- .element: class="attribution" -->
+</div><!-- .element: class="white-bg" -->
 
 
-"Programmers waste enormous amounts of time thinking about, or worrying about, the speed of noncritical parts of their
-programs, and these attempts at efficiency actually have a strong negative impact when debugging and maintenance are
-considered. We should forget about small efficiencies, say about 97% of the time: premature optimization is the root of
+<!-- .slide: data-background="./images/bg/weave.jpg" -->
+<div>
+<div>
+"We should forget about small efficiencies, say about 97% of the time: premature optimization is the root of
 all evil. Yet we should not pass up our opportunities in that critical 3%."
 <!-- element: class="quote" -->
+</div>
 
+<div>
 Donald E. Knuth
 [Structured Programming With `go to` Statements](https://web.archive.org/web/20130731202547/http://pplab.snu.ac.kr/courses/adv_pl05/papers/p261-knuth.pdf)
+</div><!-- .element: class="attribution" -->
+</div><!-- .element: class="white-bg" -->
 
 <!-- highglight the "when debugging and maint" bit? Emphasise talk is about showing you can be concerned about perf but mostly leave it to compiler -->
 

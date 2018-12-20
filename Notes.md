@@ -19,6 +19,15 @@ really exist in our community - but I think the perception of it does)
 * from Das: https://godbolt.org/z/epsbII
 * examples of clever compiler: https://gcc.godbolt.org/z/-bbUcl (via dascandy too I think)
 * Hana's CTRE?
+* Loop unswitch? http://localhost:10240/#g:!((g:!((g:!((g:!((h:codeEditor,i:(fontScale:2.5,j:1,lang:c%2B%2B,source:'//+setup%0A++%23include+%3Carray%3E%0A++using+namespace+std%3B%0Aint+totalA+%3D+0%3B+%0Aint+totalB+%3D+0%3B+%0Avoid+add(bool+isA,+array%3Cint,+256%3E+%26arr)%0A%7B%0A++for+(auto+val+:+arr)%0A++%7B%0A++++if+(isA)+%7B%0A++++++totalA+%2B%3D+val%3B%0A++++%7D+else+%7B%0A++++++totalB+%2B%3D+val%3B%0A++++%7D%0A++%7D%0A%7D%0A'),l:'5',n:'0',o:'C%2B%2B+source+%231',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0'),(g:!((h:compiler,i:(compiler:g82,filters:(b:'0',binary:'1',commentOnly:'0',demangle:'0',directives:'0',execute:'1',intel:'0',trim:'0'),fontScale:3,lang:c%2B%2B,libs:!(),options:'-O2+-funswitch-loops',source:1,wantOptInfo:'1'),l:'5',n:'0',o:'x86-64+gcc+8.2+(Editor+%231,+Compiler+%231)+C%2B%2B',t:'0')),k:50,l:'4',m:100,n:'0',o:'',s:0,t:'0')),l:'2',m:32.55250403877221,n:'0',o:'',t:'0'),(g:!((h:cfg,i:(editorid:1,j:1,options:(navigation:'1',physics:'1'),pos:(___x:0,___y:-7),scale:1,selectedFn:'add(bool,+std::array%3Cint,+256ul%3E%26):'),l:'5',n:'0',o:'x86-64+gcc+8.2+Graph+Viewer+(Editor+%231,+Compiler+%231)',t:'0')),header:(),l:'4',m:67.44749596122779,n:'0',o:'',s:0,t:'0')),l:'3',n:'0',o:'',t:'0')),version:4
+* Value types?!
+  - http://localhost:10240/#g:!((g:!((g:!((h:codeEditor,i:(j:1,lang:c%2B%2B,source:'%23include+%3Ccstdint%3E%0A%23include+%3Ccstring%3E%0A%0Astruct+BuyOrder+%7B%0A++++char+ticker%5B4%5D%3B+%0A++++int32_t+price%3B%0A++++int32_t+quantity%3B%0A%7D%3B%0A%0Avoid+send(const+BuyOrder+%26)%3B%0A%0Avoid+buy(const+char+*ticker,+int+price,+int+quantity)+%7B%0A++++BuyOrder+bo%3B%0A++++strncpy(bo.ticker,+ticker,+sizeof(bo.ticker))%3B%0A++++bo.price+%3D+price%3B%0A++++bo.quantity+%3D+quantity%3B%0A++++send(bo)%3B%0A%7D%0A%0Avoid+test()+%7B%0A++++buy(%22GOOG%22,+500,+1000)%3B%0A%7D'),l:'5',n:'0',o:'C%2B%2B+source+%231',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0'),(g:!((g:!((h:compiler,i:(compiler:gsnapshot,filters:(b:'0',binary:'1',commentOnly:'0',demangle:'0',directives:'0',execute:'1',intel:'0',trim:'1'),lang:c%2B%2B,libs:!(),options:'-O3+-march%3Dhaswell',source:1),l:'5',n:'0',o:'x86-64+gcc+(trunk)+(Editor+%231,+Compiler+%231)+C%2B%2B',t:'0')),k:50,l:'4',m:50,n:'0',o:'',s:0,t:'0'),(g:!((h:compiler,i:(compiler:clang_trunk,filters:(b:'0',binary:'1',commentOnly:'0',demangle:'0',directives:'0',execute:'1',intel:'0',trim:'1'),lang:c%2B%2B,libs:!(),options:'-O3+-march%3Dhaswell',source:1),l:'5',n:'0',o:'x86-64+clang+(trunk)+(Editor+%231,+Compiler+%232)+C%2B%2B',t:'0')),header:(),l:'4',m:50,n:'0',o:'',s:0,t:'0')),k:50,l:'3',n:'0',o:'',t:'0')),l:'2',n:'0',o:'',t:'0')),version:4
+  - could show this and how clever and see if anyone spots mistake, then segue into ... types...
+  - http://localhost:10240/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAKxAEZSAbAQwDtRkBSAJgCFufSAZ1QBXYskwgA5NwDMeFsgYisAag6yAwskEF8LAhuwcADAEE5CpSszqtOgsQXAjpi%2Bd3ERyAqp4iATwB5YixidQB2PnNVWNVkBCZwgjxkAGtMYg4AVh4AFhyAEQ0edRi4hQJZLgB9XwAHJwkStzjVSuq61QBHEVYUggCW8w4I4tlo9zMAN1Q8dFVBTBZ0CDQWXT9AkLD1LgA2AEphswJMAFt65jONTUH65aZz2wAVAIfSVXvH59UXphcsmM5iUTEEglUADUmMpbKNJm03g9VNMYSJMDUTvURAAjBipECtOKYAAeV1ShChaMwECRtmmh1UIBR1JqEAZkT4YyJsTpLNhEEZ6028NUxEwBDELH56MxE0ixRG3Imbjcnm8vgACk1MP9gJzRuNJuqfKoAIp9AyEAJ6g3KyYiQTOVTa1Jw2SFKmw26VT6uiR61wq8yO50W/rWuye6HerS%2B82WgY2gFByZqghMFLIFFzBY4wJrVAbXwJJKqABUWYyZBdOtUjTdn3DVsGPUT1sZ8J5W2CoUyqhxqBObU8inqAQgg4AdFXMp9ZzWnQAvTCoABmk9QM9S1cOx2DZja04bEij9Z1U9RAv3CLi096EdbGk9D5bAUv1MFw7iSxWm5vqrciM5izPMXyYLogoGuUsT5hO3BcAA4kEQSIQhfo6vCtAmDhhpNu2gzwtkuFjABSqFFIhyMNI2RSKQLDSCYdGoNImj8PwiyiOIcJcLItB0QQjGUVRaQgMR1FSHkdEMVITGkCxUh0YIIAmKQgmyZRpBwLAMCICgqCXHgDBzhQhaGcZxAgMAggsEw9SCAgqAEKQa5GWcxDKZOQmkDiChJAE0j8aQaDnM8BhBCwDABRppBYOcrDAMZ3n4OKPh4NMEHeaSmDICIZyBXRlSYAw3mOHg5wFVRzBsCg7G8IweA4spkBUag9QpEWylSAAtEEsiqN18XiAgz6JIIADuxUMEpXESHQVU0dJ3kKSSAAc%2BzdfseSqMAyDZhAjgiCwaSMhAuCECQex8Z8mgGfURn9nItCMmxvD8AJQl7qQoniSVkl0RV4kyXJClKSpamfVpukQEgIX3RZ5CUHDD2WaCbB1F4x0uW5mSeTi3m%2BbZxDRUFIVhQQEVRclFwJUlMUpTlKQZV1cnZbl%2BVSEFRV/XJZUVZzmnVewdUCPiTXwK17V4J10i9f1g1JAko1gpNDDTUIs2SM9Em0fRy3SGtG1bfEQuqAdmMnWb51EOET03XdKNXVwL0ix9GlfQgmBMGElALf9pCA6pwPMdIYOqepTFfT9ql/bIS0xaDEPu37XDxyDodJ5HVEZR50sMXkQA%3D
+* Dervirt fail? http://localhost:10240/#g:!((g:!((g:!((h:codeEditor,i:(j:1,lang:c%2B%2B,source:'%23include+%3Ccstdint%3E%0Ausing+namespace+std%3B%0A%0Astruct+Colour+%7B%0A++++uint8_t+red%7B%7D%3B%0A++++uint8_t+green%7B%7D%3B%0A++++uint8_t+blue%7B%7D%3B%0A++++uint8_t+alpha%3D255%3B%0A%7D%3B%0A%0Astruct+Screen+%7B%0A++++virtual+~Screen()+%3D+default%3B%0A++++virtual+void+putPixel(int+x,+int+y,+Colour+c)+%3D+0%3B%0A%7D%3B%0A%0Astruct+FrameBuffer+final+:+Screen+%7B%0A++++static+constexpr+auto+Width+%3D+640%3B%0A++++static+constexpr+auto+Height+%3D+512%3B%0A++++Colour+buffer%5BHeight%5D%5BWidth%5D%3B%0A++++void+putPixel(int+x,+int+y,+Colour+c)+override+%7B%0A++++++++if+(x+%3E%3D+0+%26%26+x+%3C+Width+%26%26+y+%3E%3D+0+%26%26+y+%3C+Height)%0A++++++++++++buffer%5By%5D%5Bx%5D+%3D+c%3B++++++%0A++++%7D++++%0A%7D%3B%0A%0Avoid+horizLine(Screen+%26screen,+int+x0,+int+x1,+int+y,+Colour+c)+%7B%0A++++for+(int+x+%3D+x0%3B+x+%3C+x1%3B+%2B%2Bx)+%7B%0A++++++++screen.putPixel(x,+y,+c)%3B%0A++++%7D%0A%7D'),l:'5',n:'0',o:'C%2B%2B+source+%231',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0'),(g:!((h:compiler,i:(compiler:clang700,filters:(b:'0',binary:'1',commentOnly:'0',demangle:'0',directives:'0',execute:'1',intel:'0',trim:'1'),lang:c%2B%2B,libs:!(),options:'-O3',source:1),l:'5',n:'0',o:'x86-64+clang+7.0.0+(Editor+%231,+Compiler+%231)+C%2B%2B',t:'0')),k:50,l:'4',n:'0',o:'',s:0,t:'0')),l:'2',n:'0',o:'',t:'0')),version:4
+  - also union/strcut Colour thing fails?
+  - clear screen?
+  - http://localhost:10240/#z:OYLghAFBqd5QCxAYwPYBMCmBRdBLAF1QCcAaPECAKxAEZSAbAQwDtRkBSAJgCFufSAZ1QBXYskwgA5NwDMeFsgYisAag6yAwskEF8LAhuwcADAEERghcFUsmAW0yCADkwmrd6DX3Omzu4hFkAlVNVAZRYnUAdh8zVQTVEQUCAA4AfRDiTC9YjmiAEW8/RKSUjJDgbMwWfL5C4vNS5IMK1QAjZUw6/KLZOObyzNUmBmcEJg0CrgBWGcazXoW/AKCQgGVkapYYgcSANzxiAhFR1QA/Te2IAEp1WQLVLAAzJhEGQ36Sg6OTs/3UHh0KpnCICAAFPAAD0wDAgKVUUNIqgRAE9kWEImJVMg7lNVCYFqVDsdTgwUQZVMBMAQAOpAggIW441AsXT3R6Er5NH6ks4I6kEAASmDwwAQBGZaDZIXxXLiS25i3Mq2CqgAYsQHJgeCJns9MFFngoziBVFdMDVdt8EromAQ8MgWTLMFDnFE3kRVPT0IyOaoAGwAFnlNo8BHtjuduld7pGYNQqhFYol/pmtC4RMSmMiHT1BuIHBmPGT4sMMyKxZ9jKLfT2CQBQJBYMhMLhCKRFJC6NC4VzuNUqH2huIQMw1p5pQSeGeqggUPuxgeBPUXAD3ADiPumm9DIQq/Xa9UqMXcoPG%2BP26TorLNzDU8S7XzhqLPFRtdfUNr/s4/QfYd6UowwFGlqyZO5pXZIcRzHXZVGyE5iB2MDvBiIpJy7KkaVLCUpVZKDh2IUc1DqeCaTEHYcM%2BHg0L8RUFXMRtgSUTAmGICBNW1XV9UNA9BC2S0WAxPtsQHHoMOeEg5zRf15UvDQd347YADpBSo25UP4fhUTxPIMISSSonhSkFzlVDTK0DwBJqVTQL3DS/y03goV0%2BspyUwTlNBCFoVhedkRMZFcSzICGgwpZfEKKQbkYaQZikUgWGkEwEtQaRNCcmjhDEdw5FoBKCGS6KYoAaxAGZAoYaQgwSpKpBS0g0qkBLBBAQLCvq6LSDgWAYEQFBUHsZw8AYQ1yEoNAhpGw0QGAQQ7GcQQEFQAhSGND5DVaiB2iK0h2hNYhUWkfLSEmxwDAAeRYBgjs60gsHsVhgFG3b8GyYI8GHVq7tdTBkDBSQpBOlJYV2ghR3sY6uuYNgUEyxg8HaVrIBi1BnAdfDpAAWgu2RVCxx7xAQKYJkEAB3WEGBayIJDoGKqqkeLEt2pqoVSAMseDKlkCdCBwZEFgSruCBcEIKS8uEqbRqiPK7gy3h%2BAKoqblK8rKuqhLIYq5m7qalq2tIDqUpinr%2Bsm4bpfGiBzem4gUBh4BMkCQW1pGghNsoHa7v2uxDqh07BvOggrpu17MEetgXrut6/odL7dt%2B/73f9kGGYa8G8EhoHoaeuGFd4BGkfgVH0bwTGpBxvGCbY5BiYeUmKYYKmhBpyRaHpuLapZ6Q2Y5rmlCeud%2BcF4XRaIGWuFkeheyl3i5C4OXMqVzqVdIBBWKwO3bliqQatILXArqhq9aEA2jeK0gyu1hnZC73XpGX42O6kLg7%2BPh/DeVmLCKsVkQCDIAA
 
 ## Random brainstorming
 
@@ -182,3 +191,42 @@ after dreaming...
   * Ignoring what you specifically asked them to do
     * structure layout
     * virtual methods (although...)
+    
+# Script part one
+
+My talk is what everyone should know!
+
+In this talk I want you to learn a bit about what a fantastic job your compiler does taking your code
+and making it into efficient machine code.
+
+Who am I? Hi! I'm Matt Godbolt. I'm accidentally a verb.
+
+I'm best known for a funny little website called Compiler Explorer. Of course, I'm about the only person who calls it
+that, the majority of people I know refer to it by its domain name, "Godbolt". It's surreal to hear people saying things
+like "Let's Godbolt that." or "Have you put it in Godbolt". I've even been in the same room as people saying these things
+and had to shout "oy!" etcetc.
+
+So why did I make CE?
+
+In 2012 I was working for a low latency trading firm. In that environment, every nanosecond counts: the difference
+between making money...and...not... can be as little as that. Understandably when you're writing code like that, you
+scrutinise everything.
+
+We were in the process of upgrading compilers and a colleague and I were discussing whether we could afford to enable
+these fancy new C++11 features like range-for and lambdas. We'd been bitten in other languages by seemingly innocuous
+improvements actually causing performance degradations.
+
+We found ourselves comparing code like this. Of course in reality one should be using `std::accumulate` but you get
+the idea from this. Of course we could benchmark but it was interesting to go to the source of truth itself and look
+at what assembly code the compiler generated in each case.
+
+A quick warning...there will be assembly in this presentation. Of course one can be an amazing C++ programmer and
+not have to ever look at or think about the assembly code underneath everything. I love the fact that programming
+in C++ lets us go up and down the stack <TODO> but I want to show you it can be fun to ride down to the lower levels.
+
+<slides on asm>
+
+<back to example, show how it comes out>
+
+With CE we started to learn more about how the compiler worked, and developed intuition about what optimizations it
+could, and could not do. 
