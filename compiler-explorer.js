@@ -4,7 +4,7 @@
     for (let i = 0, len = ce_nodes.length; i < len; i++) {
         let element = ce_nodes[i];
         let compiler = "g82";
-        let options = "-O1";
+        let options = "-O1 -march=haswell -Wall -Wextra -pedantic";
         let source = unescape(element.textContent);
         let lines = source.split('\n');
         source = "";
@@ -62,7 +62,7 @@
 
         element.onclick = (evt) => {
             if (evt.ctrlKey) {
-                window.location.replace(baseUrl + "#" + ceFragment);
+                window.location.assign(baseUrl + "#" + ceFragment);
             }
         };
         element.textContent = displaySource;

@@ -230,3 +230,42 @@ in C++ lets us go up and down the stack <TODO> but I want to show you it can be 
 
 With CE we started to learn more about how the compiler worked, and developed intuition about what optimizations it
 could, and could not do. 
+
+
+----
+
+Big List Of Possible Optims/Things
+
+- multiplication
+  - x * y
+  - x * power two
+  - x * constant
+    - joke slide of the 65599
+- division and modulus
+  - x / y
+  - x / pow2
+  - x / constant
+- count set bits
+- sumUpTo
+- calling external functions (fits into theme of what _can't_ compiler do)
+- aliasing
+  - contrived example
+  - maxArray example (with overlap check?)
+- heap elision
+- ternary operator
+- virtual methods
+  - static devirt: https://gcc.godbolt.org/z/GEKoG8
+    - clang needs -fstrict-vtable-pointers
+- asan
+- pass by reference/value
+- variants
+- non-virtual thunks (probably not)
+- digit formatting? (probably not)
+- hash table ispow2 stuff going on clang vs/gcc?
+- UB stuff? looping (assert isOk for linked list)
+- helping the compiler out (assume aligned, unreachable)
+- auto & vs auto for big object (ref to index-prev.html apple thing)
+- likely/unlikely
+- architectures where no macro-op fusion: https://www.godbolt.org/z/7J5wfQ (clang counts up)
+- examples of clever compiler: https://gcc.godbolt.org/z/-bbUcl (via dascandy too I think) (bswap)
+- variables https://godbolt.org/z/O9wk0Z

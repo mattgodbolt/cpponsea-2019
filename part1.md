@@ -74,8 +74,9 @@ label:
 ```
 
 
-Demo here!
-<!-- iframe src="http://localhost:10240/z/MDr-w8">/<iframe>
+<!-- .slide: data-background="./images/bg/4340253422_53edf549b4_o.jpg" -->
+# Important note on performance
+<!-- .element: class="white-bg" -->
 
 
 <!-- .slide: data-background="./images/bg/weave.jpg" -->
@@ -110,9 +111,33 @@ Donald E. Knuth
 
 ---
 
-### Why C++?
+### Maths
+- multiplication
+- division
 
-C vs C++? asm?
+---
+
+### Variables
+- price? value type
+- things
+
+---
+
+### Control flow
+- unrolling
+
+---
+
+### Architectural tricks
+- count set bits
+- bswap
+
+---
+
+### Not good at being psychic
+- sum over vector? https://godbolt.org/z/gw4vDQ
+- 
+
 
 ---
 
@@ -123,26 +148,5 @@ C vs C++? asm?
 
 * Compilers are cleverer than we are
   * unless you're a compiler writer
-* We should all know how to look at their output
+* Trust the compiler. But don't be afraid to check its output
 * We can help the compiler along, if we understand what it's looking for
-
-
----
-
-### notes
-
-* Vague plan? TELL A STORY!
-  * Hi! I'm me. I'm accidentally a verb
-    * Backstory? Turbo version?
-  * Why I love C++ and everything it brings
-    * nod to other languages in this space
-  * But...like most coders the bit I love the most is <1% of my job
-  * Just getting stuff done!
-  * Write code, test code, repeat. Check in. Handle compiler error. Repeat etc
-  * Every now and then, some nugget of cool stuff needed
-    * example? byteswapping? das's example showing my cool intrinsics/inline asm unnecessary?
-  * Optimizing a FIX engine?
-  * Conclusion
-    * What do I want people to take away?
-      * Trust the compiler
-      * Knowing what it does is not required, but is FUN and instructive
