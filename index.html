@@ -100,6 +100,44 @@
             font-size: 120%;
         }
 
+        #registers th {
+            font-size: 30px;
+            text-align: center;
+        }
+
+        #registers td {
+            text-align: center;
+        }
+
+        #registers td.register {
+            border: 1px solid black;
+            font-family: Courier, 'Courier New', monospace;
+        }
+
+        #registers td.rax {
+            background: rgb(141, 211, 199);
+        }
+
+        #registers td.eax {
+            background: rgb(255, 255, 179);
+        }
+
+        #registers td.ax {
+            background: rgb(190, 186, 218);
+        }
+
+        #registers td.ah {
+            background: rgb(251, 128, 114);
+        }
+
+        #registers td.al {
+            background: rgb(128, 177, 211);
+        }
+
+        #registers td.regnote {
+            font-size: smaller;
+            font-style: italic;
+        }
     </style>
 
     <!-- Theme used for syntax highlighting of code -->
@@ -123,7 +161,12 @@
                 <h5>Matt Godbolt <a href="https://twitter.com/mattgodbolt">@mattgodbolt</a></h5>
             </div>
         </section>
-        <section data-markdown="part1.md"
+        <section data-markdown="intro.md"
+                 data-background="./images/bg/walker.jpg"
+                 data-separator-vertical="^\n\n">
+        </section>
+        <section data-markdown="asm.md"
+                 data-background="./images/bg/4340253422_53edf549b4_o.jpg"
                  data-separator-vertical="^\n\n">
         </section>
         <section>
