@@ -51,6 +51,25 @@ int sum(const vector<int> &v)
 
 
 <!-- .slide: data-background="./images/bg/4340253422_53edf549b4_o.jpg" -->
+```x86asm
+  <opcode> <destination>, <source>
+```
+
+```x86asm
+  mov call jmp jz jnz jl jge
+  cmp or and xor
+  add sub mul div
+```
+
+```x86asm
+  register
+  qword ptr [register]
+  qword ptr [register + offset]
+  qword ptr [register + offset + register2 * (1,2,4,8)]
+```
+
+
+<!-- .slide: data-background="./images/bg/4340253422_53edf549b4_o.jpg" -->
 <div>
 ### Registers
 - `rax` (return value) 
@@ -66,12 +85,25 @@ int sum(const vector<int> &v)
 ```x86asm
   mov eax, edi              ; eax = edi
   add eax, 1234             ; eax += 1234
-  cmp eax, 5678             ; compare eax with 5678...
+  cmp dword ptr [rsi], eax  ; compare eax with *(int *)rsi...
   jne label                 ; ...if not equal, go to "label"
   xor eax, eax              ; eax = 0
 label:
   ret                       ; return
 ```
+
+```cpp
+int func(int val, int *ptr)
+{
+  int res = val + 1234;
+  if (res == *ptr)
+  {
+    res = 0;
+  }
+  return res;
+}
+``` 
+<!-- .element: class="fragment" -->
 
 
 <!-- .slide: data-background="./images/bg/4340253422_53edf549b4_o.jpg" -->
@@ -107,37 +139,117 @@ Donald E. Knuth
 </div><!-- .element: class="attribution" -->
 </div><!-- .element: class="white-bg" -->
 
-<!-- highglight the "when debugging and maint" bit? Emphasise talk is about showing you can be concerned about perf but mostly leave it to compiler -->
-
 ---
 
-### Maths
-- multiplication
-- division
+## Maths
 
----
 
-### Variables
+### Multiplication
+
+```cpp
+int multiply(int x, int y)
+{
+  return x * y;
+}
+```
+
+
+```cpp
+int mulBy65599(int a)
+{
+  return (a << 16) + (a << 6) - a;
+  //       ^          ^
+  //     a * 65536    |
+  //                a * 64
+  // 65536a + 64a - 1a = 65599a
+}
+```
+
+
+### Division & Modulus
+
+```cpp
+int divide(int x, int y)
+{
+  return x / y;
+}
+```
+
+
+```cpp
+struct DivideResult
+{
+  int quotient;
+  int remainder;
+};
+
+DivideResult divide(int x, int y)
+{
+  return { 
+    x / y, 
+    x % y 
+  };
+}
+```
+
+
+## Variables
 - price? value type
 - things
 
 ---
 
-### Control flow
+## Control flow
 - unrolling
 
 ---
 
-### Architectural tricks
-- count set bits
-- bswap
+## Architectural tricks
 
+
+### Counting set bits
+```cpp
+int countSetBits(unsigned a)
+{
+  int count = 0;
+  while (a != 0)
+  {
+    count++;
+    a &= (a - 1); // clear top set bit
+  }
+  return count;
+}
+```
+
+
+### Switching byte order
+```cpp
+//setup
+  #include <cstdint>
+
+uint32_t switchBits(uint32_t x) {
+    auto first = x & 0xff;
+    auto second = (x >> 8) & 0xff;
+    auto third = (x >> 16) & 0xff;
+    auto fourth = (x >> 24) & 0xff;
+    return 
+        (first << 24)
+      | (second << 16)
+      | (third << 8)
+      | fourth;
+}
+```
 ---
 
 ### Not good at being psychic
 - sum over vector? https://godbolt.org/z/gw4vDQ
-- 
 
+
+### Not very good at telling you about layout
+- struct layout
+
+
+### Not (so) good at telling you missed opportunities
 
 ---
 

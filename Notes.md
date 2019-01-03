@@ -269,3 +269,20 @@ Big List Of Possible Optims/Things
 - architectures where no macro-op fusion: https://www.godbolt.org/z/7J5wfQ (clang counts up)
 - examples of clever compiler: https://gcc.godbolt.org/z/-bbUcl (via dascandy too I think) (bswap)
 - variables https://godbolt.org/z/O9wk0Z
+
+---
+
+# Time budget
+
+00 - Intro
+05 - Assembly
+10 - Maths
+15 - Variables
+20 - Variables
+25 - Control flow
+30 - Arch tricks
+35 - Arch tricks
+40 - ?
+45 - When is compiler not clever?
+50 - When is compiler not clever?
+55 - Questions!!
