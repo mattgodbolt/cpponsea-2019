@@ -4,7 +4,7 @@
     for (let i = 0, len = ce_nodes.length; i < len; i++) {
         let element = ce_nodes[i];
         let compiler = "g82";
-        let options = "-O1 -march=haswell -Wall -Wextra -pedantic";
+        let options = "-O2 -march=haswell -Wall -Wextra -pedantic";
         let source = unescape(element.textContent);
         let lines = source.split('\n');
         source = "";

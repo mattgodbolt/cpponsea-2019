@@ -8,9 +8,11 @@
 
 
 ```x86asm
-  mov call jmp jz jnz jl jge
-  cmp or and xor
-  add sub mul div
+  mov lea
+  call jmp 
+  cmp jz jnz jl jge
+  or and not xor
+  add sub imul idiv
 ```
 
 
