@@ -2,36 +2,86 @@
 <!-- .element: class="white-bg" -->
 
 
-```x86asm
-  <opcode> <destination>, <source>
-```
-
+### Assembly!
+<!--- .element: class="white-bg" -->
 
 ```x86asm
-  mov lea
-  call jmp 
-  cmp jz jnz jl jge
-  or and not xor
-  add sub imul idiv
+  opcode
+  opcode destination
+  opcode destination, source
+  opcode destination, source1, source2
 ```
 
+```x86asm
+  ret                           ; return
+  inc rax                       ; increment "rax"
+  mov edx, 1234                 ; set "edx" to the value 1234 
+  vpaddd ymm1, ymm2, ymm0       ; "ymm1" = "ymm2" + "ymm0"
+```
+<!-- .element: class="fragment" -->
+
+
+### Opcodes
+<!--- .element: class="white-bg" -->
+
+<div class="w30 white-bg"><ul class="instr fragment highlight-current-red">
+<li>`mov`</li>
+<li>`movzx`</li>
+<li>`movsxd`</li>
+<li>`lea`</li>
+</ul><ul class="instr fragment highlight-current-red">
+<li>`call`</li>
+<li>`ret`</li>
+<li>`jmp`</li>
+</ul></div>
+
+<div class="w30 white-bg"><ul class="instr fragment highlight-current-red">
+<li>`push`</li>
+<li>`pop`</li>
+</ul><ul class="instr fragment highlight-current-red">
+<li>`cmp`</li>
+<li>`test`</li>
+<li>`je`</li>
+<li>`jne`</li>
+</ul></div>
+
+<div class="w30 white-bg"><ul class="instr fragment highlight-current-red">
+<li>`and`</li>
+<li>`xor`</li>
+<li>`add`</li>
+<li>`sub`</li>
+<li>`shl`</li>
+<li>`shr`</li>
+<li>`sar`</li>
+</ul></div>
+
+
+### Source / Destination
+<!--- .element: class="white-bg" -->
 
 ```x86asm
   register
-  qword ptr [register]
-  qword ptr [register + offset]
-  qword ptr [register + offset + register2 * (1,2,4,8)]
+  <size> ptr [register]
+  <size> ptr [register + offset]
+  <size> ptr [register + offset + register2 * (1,2,4,8)]
 ```
 
+```x86asm
+  add eax, dword ptr [rdi + 12 + rsi * 4] 
+                                ; eax += *(int *)(rdi + 12 + rsi * 4)
+```
+<!-- .element: class="fragment" -->
 
-<div>
-- `rax` (return value) 
-- `rdi` (1st param) 
-- `rsi` (2nd param) 
-- `rdx` (3rd)
-- `rbx` `rcx` `rbp` `r8-r15` `rsp`
-- `xmm0` - `xmm15` (`ymm`... `zmm`...)
-</div><!-- .element: class="white-bg" -->
+
+<div class="white-bg">
+<ul>
+<li>`rax` (return value)</li> 
+<li>`rdi` (1st param)</li> 
+<li>`rsi` (2nd param)</li> 
+<li>`rdx` (3rd)</li>
+<li>`rbx` `rcx` `rbp` `r8-r15` `rsp`</li>
+<li>`xmm0` - `xmm15` (`ymm`... `zmm`...)</li>
+</ul></div>
 
 
 <table id="registers" class="white-bg">
@@ -90,7 +140,7 @@ func:                       ; rdi is "val"   rsi is "ptr"
   add eax, 1234             ; eax += 1234    res += 1234
   cmp dword ptr [rsi], eax  ; compare eax with *(int *)rsi...
   jne .skip                 ; ...if not equal, go to ".skip"
-  xor eax, eax              ; eax = 0
+  mov eax, 0                ; eax = 0
 .skip:
   ret                       ; return
 ```

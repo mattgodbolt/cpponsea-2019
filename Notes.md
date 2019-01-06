@@ -286,3 +286,32 @@ Big List Of Possible Optims/Things
 45 - When is compiler not clever?
 50 - When is compiler not clever?
 55 - Questions!!
+
+
+---
+
+```bash
+$ objdump -d /usr/bin/node -Mintel --no-show-raw-insn  | grep -E '  [0-9a-f]+:' | awk '{print $2}' | sort | uniq -c | sort -n | tail -21
+   7400 shl
+   7498 shr
+   8586 sar
+   9605 movsxd
+  21006 movzx
+  23269 and
+  30670 ret
+  38042 sub
+  55313 add
+  57455 jne
+  68471 xor
+  73975 test
+  87334 jmp
+  87802 je
+  91490 cmp
+  98183 push
+ 105101 nop
+ 107515 pop
+ 138944 lea
+ 210898 call
+ 902490 mov
+
+```

@@ -31,6 +31,7 @@ int mulBy65599(int a)
 
 
 ### Division & Modulus
+<!-- .element: class="white-bg" -->
 
 ```cpp
 int divide(int x, int y)
@@ -58,6 +59,7 @@ DivideResult divide(int x, int y)
 
 
 ### Vectorization
+<!-- .element: class="white-bg" -->
 
 ```cpp
 // setup
@@ -78,13 +80,14 @@ int sumSquared(
   #include <vector>
   #include <numeric>
   using namespace std;
-int sumSquared(
-    const vector<int> &v) {
+template<typename T>
+auto sumSquared(
+    const vector<T> &v) {
   return std::accumulate(
-      begin(v), end(v), 0,
+      begin(v), end(v), T(),
       [](auto x, auto y) {
         return x + y*y;
-      }
+      });
 }
 ```
 
