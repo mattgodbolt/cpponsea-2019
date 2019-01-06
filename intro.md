@@ -19,6 +19,26 @@ I'm accidentally a verb <!-- .element: class="fragment" -->
 
 
 ```cpp
+void LightObject(Renderable *object)
+{
+  auto world(object->GetMatrix());
+  SetWorldMatrix(world);
+  auto lMat = world * worldToLight;
+  auto boundLs = TransformBounds(
+      object->GetBounds(), lMat);
+  if (!boundLs.Overlap(lightSphere))
+    return;
+  auto ms = pos * world.Invert();
+  ...
+```
+<!-- .element: class="w50" -->
+
+<div class="w50 fragment">
+<img src="./images/swat-outdoor-scene.jpeg">
+</div>
+
+
+```cpp
 template<typename T>
 auto thingy(T &&t)
 {
@@ -47,19 +67,6 @@ error: 'struct Marmoset' has no member named 'badger'
 ...
 ```
 <!-- .element: class="w60 fragment" -->
-
-
-```cpp
-Vec4f transform(Vec4f v, const Matrix &m)
-{
-  // TODO here
-}
-```
-<!-- .element: class="w50" -->
-
-<div class="w50 fragment">
-<img src="./images/red_dog.png">
-</div>
 
 
 ```cpp

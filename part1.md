@@ -44,6 +44,13 @@ uint32_t switchBits(uint32_t x) {
       | fourth;
 }
 ```
+
+```cpp
+bool isspc(char c) {
+    return c == ' ' || c == '\r' || c == '\n';
+}
+```
+
 ---
 
 ### Not good at being psychic

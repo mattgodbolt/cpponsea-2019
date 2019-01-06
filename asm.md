@@ -80,7 +80,7 @@
 <li>`rsi` (2nd param)</li> 
 <li>`rdx` (3rd)</li>
 <li>`rbx` `rcx` `rbp` `r8-r15` `rsp`</li>
-<li>`xmm0` - `xmm15` (`ymm`... `zmm`...)</li>
+<li>`xmm0-15` (`ymm0-15`... `zmm0-31`... `k0-7`)</li>
 </ul></div>
 
 
