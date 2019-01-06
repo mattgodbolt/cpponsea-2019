@@ -11,7 +11,7 @@ int countSetBits(unsigned a)
   while (a != 0)
   {
     count++;
-    // clear top set bit
+    // clear bottom set bit
     a &= (a - 1);
   }
   return count;
@@ -20,7 +20,7 @@ int countSetBits(unsigned a)
 
 
 ```cpp
-//setup
+// setup
   #include <cstdint>
 
 uint32_t switchBits(uint32_t x)

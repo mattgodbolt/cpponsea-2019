@@ -32,29 +32,9 @@ int mulBy65599(int a)
 ```
 
 
-### Division & Modulus
-<!-- .element: class="white-bg" -->
-
 ```cpp
 int divide(int x, int y)
 {
   return x / y;
-}
-```
-
-
-```cpp
-struct DivideResult
-{
-  int quotient;
-  int remainder;
-};
-
-DivideResult divide(int x, int y)
-{
-  return { 
-    x / y, 
-    x % y 
-  };
 }
 ```

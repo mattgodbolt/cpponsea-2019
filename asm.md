@@ -132,6 +132,7 @@ And many, many more...
 
 
 ```cpp
+///clang700:-O2 -march=haswell
 int func(int val, const int *ptr)
 {
   int res = val + 1234;
@@ -144,7 +145,7 @@ int func(int val, const int *ptr)
 ``` 
 
 ```x86asm
-func:                       ; rdi is "val"   rsi is "ptr"
+func:                       ; edi is "val"   rsi is "ptr"
   mov eax, edi              ; eax = edi      res = val
   add eax, 1234             ; eax += 1234    res += 1234
   cmp dword ptr [rsi], eax  ; compare eax with *(int *)rsi...

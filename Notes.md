@@ -315,3 +315,10 @@ $ objdump -d /usr/bin/node -Mintel --no-show-raw-insn  | grep -E '  [0-9a-f]+:' 
  902490 mov
 
 ```
+
+
+---
+# Runthrough 6th Jan at home
+- 1hr 15 but took some notes.
+- did not have conclusion down, did not have any devirt/variable stuff in
+- Probably took too long on the asm 101 bit

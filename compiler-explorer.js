@@ -39,6 +39,9 @@
                 }
             }
         }
+        while (displaySource.startsWith("\n")) {
+            displaySource = displaySource.slice(1, displaySource.length);
+        }
         while (displaySource.endsWith("\n\n")) {
             displaySource = displaySource.slice(0, displaySource.length - 1);
         }

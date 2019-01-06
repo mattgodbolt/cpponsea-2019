@@ -89,18 +89,18 @@ int sumSquared(const vector<int> &v)
     <tr>
         <th class="nobreak"><code>vpmulld <span class="ymm0">ymm0</span>, <span class="ymm2">ymm2</span>, <span class="ymm2">ymm2</span></code></th>
         <td class="register ymm0 fragment" data-fragment-index="2">...</td>
-        <td class="register ymm0 fragment" data-fragment-index="2">`val[i+3]`<sup>2</sup></td>
-        <td class="register ymm0 fragment" data-fragment-index="2">`val[i+2]`<sup>2</sup></td>
-        <td class="register ymm0 fragment" data-fragment-index="2">`val[i+1]`<sup>2</sup></td>
-        <td class="register ymm0 fragment" data-fragment-index="2">`val[i+0]`<sup>2</sup></td>
+        <td class="register ymm0 fragment" data-fragment-index="2">`v[i+3]`<sup>2</sup></td>
+        <td class="register ymm0 fragment" data-fragment-index="2">`v[i+2]`<sup>2</sup></td>
+        <td class="register ymm0 fragment" data-fragment-index="2">`v[i+1]`<sup>2</sup></td>
+        <td class="register ymm0 fragment" data-fragment-index="2">`v[i+0]`<sup>2</sup></td>
     </tr>
     <tr>
         <th class="nobreak"><code>vpaddd <span class="ymm1">ymm1</span>, <span class="ymm1">ymm1</span>, <span class="ymm0">ymm0</span></code></th>
         <td class="register ymm1 fragment" data-fragment-index="3">...</td>
-        <td class="register ymm1 fragment" data-fragment-index="3">`res[3]+= val[3]`<sup>2</sup></td>
-        <td class="register ymm1 fragment" data-fragment-index="3">`res[2]+= val[2]`<sup>2</sup></td>
-        <td class="register ymm1 fragment" data-fragment-index="3">`res[1]+= val[1]`<sup>2</sup></td>
-        <td class="register ymm1 fragment" data-fragment-index="3">`res[0]+= val[0]`<sup>2</sup></td>
+        <td class="register ymm1 fragment" data-fragment-index="3">`res[3]+ v[3]`<sup>2</sup></td>
+        <td class="register ymm1 fragment" data-fragment-index="3">`res[2]+ v[2]`<sup>2</sup></td>
+        <td class="register ymm1 fragment" data-fragment-index="3">`res[1]+ v[1]`<sup>2</sup></td>
+        <td class="register ymm1 fragment" data-fragment-index="3">`res[0]+ v[0]`<sup>2</sup></td>
     </tr>
     </tbody>
 </table>
