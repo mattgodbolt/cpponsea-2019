@@ -55,6 +55,12 @@
 <li>`sar`</li>
 </ul></div>
 
+<div><br><br></div>
+
+<div class="fragment white-bg">
+And many, many more...
+</div>
+
 
 ### Source / Destination
 <!--- .element: class="white-bg" -->
@@ -73,18 +79,21 @@
 <!-- .element: class="fragment" -->
 
 
+### Registers
+<!--- .element: class="white-bg" -->
+
 <div class="white-bg">
 <ul>
 <li>`rax` (return value)</li> 
 <li>`rdi` (1st param)</li> 
 <li>`rsi` (2nd param)</li> 
-<li>`rdx` (3rd)</li>
+<li>`rdx` (3rd param)</li>
 <li>`rbx` `rcx` `rbp` `r8-r15` `rsp`</li>
 <li>`xmm0-15` (`ymm0-15`... `zmm0-31`... `k0-7`)</li>
 </ul></div>
 
 
-<table id="registers" class="white-bg">
+<table class="registers white-bg">
     <thead>
     <tr>
         <th>63...56</th>

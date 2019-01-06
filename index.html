@@ -104,41 +104,57 @@
             font-size: 120%;
         }
 
-        #registers th {
+        .reveal .registers th {
             font-size: 30px;
             text-align: center;
         }
 
-        #registers td {
+        .reveal .registers td {
             text-align: center;
         }
 
-        #registers td.register {
+        .reveal .registers td.register {
             border: 1px solid black;
             font-family: Courier, 'Courier New', monospace;
         }
 
-        #registers td.rax {
+        .nobreak {
+            white-space: nowrap;
+        }
+
+        .reveal .registers .ymm0 {
             background: rgb(141, 211, 199);
         }
 
-        #registers td.eax {
+        .reveal .registers .ymm1 {
             background: rgb(255, 255, 179);
         }
 
-        #registers td.ax {
+        .reveal .registers .ymm2 {
             background: rgb(190, 186, 218);
         }
 
-        #registers td.ah {
+        .reveal .registers .rax {
+            background: rgb(141, 211, 199);
+        }
+
+        .reveal .registers .eax {
+            background: rgb(255, 255, 179);
+        }
+
+        .reveal .registers .ax {
+            background: rgb(190, 186, 218);
+        }
+
+        .reveal .registers .ah {
             background: rgb(251, 128, 114);
         }
 
-        #registers td.al {
+        .reveal .registers .al {
             background: rgb(128, 177, 211);
         }
 
-        #registers td.regnote {
+        .reveal .registers .regnote {
             font-size: smaller;
             font-style: italic;
         }
@@ -175,6 +191,14 @@
         </section>
         <section data-markdown="maths.md"
                  data-background="./images/bg/292404397_5c27f47d93_o.jpg"
+                 data-separator-vertical="^\n\n">
+        </section>
+        <section data-markdown="vector.md"
+                 data-background="./images/bg/highway101.jpg"
+                 data-separator-vertical="^\n\n">
+        </section>
+        <section data-markdown="arch.md"
+                 data-background="./images/bg/4701970001_7667db4ec0_o.jpg"
                  data-separator-vertical="^\n\n">
         </section>
         <section>

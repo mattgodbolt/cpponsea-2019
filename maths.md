@@ -1,5 +1,7 @@
-## Maths
-<!-- .element: class="white-bg" -->
+<div class="white-bg">
+<h2>Your Compiler Is Awesome at...</h2>
+<h2 class="fragment">Maths!</h2>
+</div>
 
 
 ```cpp
@@ -56,39 +58,3 @@ DivideResult divide(int x, int y)
   };
 }
 ```
-
-
-### Vectorization
-<!-- .element: class="white-bg" -->
-
-```cpp
-// setup
-  #include <vector>
-  #include <numeric>
-  using namespace std;
-int sumSquared(
-    const vector<int> &v) {
-  int res = 0;
-  for (auto i : v) 
-    res += i * i;
-  return res;
-}
-```
-
-```cpp
-// setup
-  #include <vector>
-  #include <numeric>
-  using namespace std;
-template<typename T>
-auto sumSquared(
-    const vector<T> &v) {
-  return std::accumulate(
-      begin(v), end(v), T(),
-      [](auto x, auto y) {
-        return x + y*y;
-      });
-}
-```
-
-### fast math?

@@ -9,48 +9,6 @@
 
 ---
 
-## Architectural tricks
-
-
-### Counting set bits
-```cpp
-int countSetBits(unsigned a)
-{
-  int count = 0;
-  while (a != 0)
-  {
-    count++;
-    a &= (a - 1); // clear top set bit
-  }
-  return count;
-}
-```
-
-
-### Switching byte order
-```cpp
-//setup
-  #include <cstdint>
-
-uint32_t switchBits(uint32_t x) {
-    auto first = x & 0xff;
-    auto second = (x >> 8) & 0xff;
-    auto third = (x >> 16) & 0xff;
-    auto fourth = (x >> 24) & 0xff;
-    return 
-        (first << 24)
-      | (second << 16)
-      | (third << 8)
-      | fourth;
-}
-```
-
-```cpp
-bool isspc(char c) {
-    return c == ' ' || c == '\r' || c == '\n';
-}
-```
-
 ---
 
 ### Not good at being psychic
