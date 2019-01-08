@@ -276,15 +276,15 @@ Big List Of Possible Optims/Things
 
 00 - Intro
 05 - Assembly
-10 - Maths
-15 - Variables
-20 - Variables
-25 - Control flow
+10 - Assembly
+15 - Maths
+20 - Maths
+25 - Arch tricks
 30 - Arch tricks
-35 - Arch tricks
+35 - ?
 40 - ?
-45 - When is compiler not clever?
-50 - When is compiler not clever?
+45 - ?
+50 - ?
 55 - Questions!!
 
 

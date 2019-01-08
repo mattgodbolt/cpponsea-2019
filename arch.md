@@ -46,3 +46,13 @@ bool isspc(char c)
         || c == '\n';
 }
 ```
+
+
+```x86asm
+  movabs rax, 0x100002400  ; 0b100000000000000000010010000000000
+                           ;   ^                  ^  ^
+                           ;   +- bit 32          |  +-- b10
+                           ;              bit 13 -+
+  shrx rax, rax, rdi       ; shift right 'rdi' times
+  and eax, 1               ; pick the lowest set bit
+```
