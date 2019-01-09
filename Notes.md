@@ -272,20 +272,20 @@ Big List Of Possible Optims/Things
 
 ---
 
-# Time budget
+# Time budget (as observed 8th Jan)
 
 00 - Intro
 05 - Assembly
 10 - Assembly
-15 - Maths
+15 - Assembly
 20 - Maths
-25 - Arch tricks
-30 - Arch tricks
-35 - ?
-40 - ?
-45 - ?
-50 - ?
-55 - Questions!!
+25 - Maths
+30 - Maths
+35 - Maths
+40 - Vector
+45 - Vector / Arch
+50 - Arch / less awesome
+55 - less awesome / conclusions
 
 
 ---
@@ -322,3 +322,25 @@ $ objdump -d /usr/bin/node -Mintel --no-show-raw-insn  | grep -E '  [0-9a-f]+:' 
 - 1hr 15 but took some notes.
 - did not have conclusion down, did not have any devirt/variable stuff in
 - Probably took too long on the asm 101 bit
+
+---
+# Runthrough 8th Jan at home.
+- Hit 1hr, timings:
+  - 5 finished intro
+  - 12m got to "opcodes"
+  - 18m showing my weird example
+  - 24m finished example
+  - 26m -> meat of the talk "Compilers are awesome"
+  - 30m mul 65599
+  - 33m divide (to 35m ish)
+  - 42m VMM instructions (overlaboured; need to edit that part)
+  - 47m end of the vectorisation section
+  - 51m isspc()
+  - 52m compilers less awesome at...(rushed!)
+  - 56m conclusion
+  - 59m Qs
+  
+ TODO: edit vector section (doesn't fit on screen, labouring point). Try and squish down asm section. example bad?
+ TODO: more "less awesome", at least functions maybe?
+ TODO: confirm Q times
+ TODO: pics in latter sections, proper credit to Romain and thanks
