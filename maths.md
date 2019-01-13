@@ -5,17 +5,9 @@
 
 
 ```cpp
-int subtract(int x, int y)
+int test(int x, int y)
 {
   return x - y;
-}
-```
-
-
-```cpp
-int multiply(int x, int y)
-{
-  return x * y;
 }
 ```
 

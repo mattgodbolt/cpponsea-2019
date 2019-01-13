@@ -16,6 +16,7 @@
   ret                           ; return
   inc rax                       ; increment "rax"
   mov edx, 1234                 ; set "edx" to the value 1234 
+  add rsi, rdi                  ; "rsi" += "rdi" 
   vpaddd ymm1, ymm2, ymm0       ; "ymm1" = "ymm2" + "ymm0"
 ```
 <!-- .element: class="fragment" -->
@@ -66,9 +67,9 @@ And many, many more...
 <!--- .element: class="white-bg" -->
 
 ```x86asm
-  register
-  <size> ptr [register]
-  <size> ptr [register + offset]
+  register                          ; e.g. rax, rbx, ecx...
+  <size> ptr [register]             ; e.g. DWORD PTR [rax]
+  <size> ptr [register + offset]    ; e.g. BYTE PTR [rcd + rsi]
   <size> ptr [register + offset + register2 * (1,2,4,8)]
 ```
 

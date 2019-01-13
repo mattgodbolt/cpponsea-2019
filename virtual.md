@@ -1,7 +1,29 @@
 <div class="white-bg">
-<h2>Your Compiler Is Still Pretty Awesome at...</h2>
-<h2 class="fragment">Virtual Methods!</h2>
+<h2>Your Compiler Is Less Awesome at...</h2>
+<h2 class="fragment">Reading Minds</h2>
 </div>
+
+
+```cpp
+/// g82:-O3 -march=haswell
+// setup
+  #include <vector>
+  #include <numeric>
+  using namespace std;
+
+void incSquareCount(int count);
+
+int sumFunc(const vector<int> &v)
+{
+  int res = 0;
+  for (auto i : v) 
+  {
+    res += i * i;
+    incSquareCount(1);
+  }
+  return res;
+}
+```
 
 
 ```cpp
@@ -26,4 +48,14 @@ int sumFunc(const vector<int> &v,
   for (auto i : v) res += func(i);
   return res;
 }
+```
+
+
+```cpp
+struct Magic {
+  bool a;
+  double b;
+  int c;
+  void *d;
+};
 ```

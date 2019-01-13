@@ -48,15 +48,3 @@ void test() {
 
 
 ### Not (so) good at telling you missed opportunities
-
----
-
-# Conclusion
-
-
-### Conclusion
-
-* Compilers are cleverer than we are
-  * unless you're a compiler writer
-* Trust the compiler. But don't be afraid to check its output
-* We can help the compiler along, if we understand what it's looking for
