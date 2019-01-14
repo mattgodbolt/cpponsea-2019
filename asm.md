@@ -78,6 +78,7 @@ And many, many more...
 
 ```x86asm
   register                          ; e.g. rax, rbx, ecx...
+  constant                          ; e.g. 1234
   <size> ptr [register]             ; e.g. DWORD PTR [rax]
   <size> ptr [register + offset]    ; e.g. BYTE PTR [rcd + rsi]
   <size> ptr [register + offset + register2 * (1,2,4,8)]

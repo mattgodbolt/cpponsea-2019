@@ -1,5 +1,5 @@
 <div class="white-bg">
-<h2>Your Compiler Is Less Awesome at...</h2>
+<h2>Compilers Less Awesome At...</h2>
 <h2 class="fragment">Reading Minds</h2>
 </div>
 

@@ -5,9 +5,8 @@
 <li class="fragment">Compilers are cleverer than we are
   <ul><li class="fragment">unless you're a compiler writer</li></ul>
 </li>
-<li class="fragment">We can help the compiler along</li>
+<li class="fragment">Assembly isn't <em>that</em> scary
 </ul>
-
 </div>
 
 
@@ -17,6 +16,7 @@
 <ul>
 <li>Trust your compiler</li>
 <li>Don't compromise readability</li>
+<li>Be aware of compiler limitations</li> 
 </ul>
 </div>
 
