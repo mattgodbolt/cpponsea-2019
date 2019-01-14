@@ -59,54 +59,6 @@ int sumSquared(const vector<int> &v)
 ```
 
 
-```x86asm
-  vmovdqu ymm2, YMMWORD PTR [rax]   ; read 8 ints into ymm2
-  vpmulld ymm0, ymm2, ymm2          ; square them
-  vpaddd ymm1, ymm1, ymm0           ; accumulate into ymm1
-```
-
-
-<table class="registers white-bg">
-    <thead>
-    <tr>
-        <th>Instruction</th>
-        <th>255...128</th>
-        <th>127...96</th>
-        <th>95...64</th>
-        <th>63...32</th>
-        <th>31...0</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <th class="nobreak"><code>vmovdqu <span class="ymm2">ymm2</span>, [rax]</code></th>
-        <td class="register ymm2 fragment" data-fragment-index="1">...</td>
-        <td class="register ymm2 fragment" data-fragment-index="1">`v[i+3]`</td>
-        <td class="register ymm2 fragment" data-fragment-index="1">`v[i+2]`</td>
-        <td class="register ymm2 fragment" data-fragment-index="1">`v[i+1]`</td>
-        <td class="register ymm2 fragment" data-fragment-index="1">`v[i+0]`</td>
-    </tr>
-    <tr>
-        <th class="nobreak"><code>vpmulld <span class="ymm0">ymm0</span>, <span class="ymm2">ymm2</span>, <span class="ymm2">ymm2</span></code></th>
-        <td class="register ymm0 fragment" data-fragment-index="2">...</td>
-        <td class="register ymm0 fragment" data-fragment-index="2">`v[i+3]`<sup>2</sup></td>
-        <td class="register ymm0 fragment" data-fragment-index="2">`v[i+2]`<sup>2</sup></td>
-        <td class="register ymm0 fragment" data-fragment-index="2">`v[i+1]`<sup>2</sup></td>
-        <td class="register ymm0 fragment" data-fragment-index="2">`v[i+0]`<sup>2</sup></td>
-    </tr>
-    <tr>
-        <th class="nobreak"><code>vpaddd <span class="ymm1">ymm1</span>, <span class="ymm1">ymm1</span>, <span class="ymm0">ymm0</span></code></th>
-        <td class="register ymm1 fragment" data-fragment-index="3">...</td>
-        <td class="register ymm1 fragment" data-fragment-index="3">`res[3]+ v[3]`<sup>2</sup></td>
-        <td class="register ymm1 fragment" data-fragment-index="3">`res[2]+ v[2]`<sup>2</sup></td>
-        <td class="register ymm1 fragment" data-fragment-index="3">`res[1]+ v[1]`<sup>2</sup></td>
-        <td class="register ymm1 fragment" data-fragment-index="3">`res[0]+ v[0]`<sup>2</sup></td>
-    </tr>
-    </tbody>
-</table>
-
-
-
 ```cpp
 /// g82:-O3 -march=haswell
 // setup

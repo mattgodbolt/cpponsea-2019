@@ -344,3 +344,15 @@ $ objdump -d /usr/bin/node -Mintel --no-show-raw-insn  | grep -E '  [0-9a-f]+:' 
  TODO: more "less awesome", at least functions maybe?
  TODO: confirm Q times
  TODO: pics in latter sections, proper credit to Romain and thanks
+ 
+---
+# Runthrough 13th Jan at home
+- 1hr, timing
+  - 10m @ 
+  - 15m @ example. skipped example
+  - 16m "performance note" (no Knuth quote)
+  - 18m compiler is awesome!
+  - 25m at divide...didn't do a demo of it
+  - 33m at "no raw loops"
+  - (maybe should switch control flow and aliasing)
+  - 46m __restrict

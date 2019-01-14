@@ -1,15 +1,25 @@
 # Assembly!?
 <!-- .element: class="white-bg" -->
 
+<div class="fragment white-bg">
+<img src="images/One_Ring_inscription.svg" height="200" class="no-border">
+<div class="attribution">
+<a href="https://commons.wikimedia.org/wiki/User:Ssolbergj">Ssolbergj</a>, Wikimedia Commons CC SA 4.0
+</div>
+<aside class="notes">
+Ash nazg durbatulûk, ash nazg gimbatul,
+Ash nazg thrakatulûk agh burzum-ishi krimpatul.
+</aside>
 
-### Assembly!
+
+### x86-64 Assembly
 <!--- .element: class="white-bg" -->
 
 ```x86asm
-  opcode
-  opcode destination
-  opcode destination, source
-  opcode destination, source1, source2
+  instr
+  instr dest_operand
+  instr dest_operand, source_operand
+  instr dest_operand, source_operand, source_operand
 ```
 
 ```x86asm
@@ -22,7 +32,7 @@
 <!-- .element: class="fragment" -->
 
 
-### Opcodes
+### Instructions
 <!--- .element: class="white-bg" -->
 
 <div class="w30 white-bg"><ul class="instr fragment highlight-current-red">
@@ -63,7 +73,7 @@ And many, many more...
 </div>
 
 
-### Source / Destination
+### Operands
 <!--- .element: class="white-bg" -->
 
 ```x86asm
@@ -132,59 +142,6 @@ And many, many more...
 </table>
 
 
-```cpp
-///clang700:-O2 -march=haswell
-int func(int val, const int *ptr)
-{
-  int res = val + 1234;
-  if (res == *ptr)
-  {
-    res = 0;
-  }
-  return res;
-}
-``` 
-
-```x86asm
-func:                       ; edi is "val"   rsi is "ptr"
-  mov eax, edi              ; eax = edi      res = val
-  add eax, 1234             ; eax += 1234    res += 1234
-  cmp dword ptr [rsi], eax  ; compare eax with *(int *)rsi...
-  jne .skip                 ; ...if not equal, go to ".skip"
-  mov eax, 0                ; eax = 0
-.skip:
-  ret                       ; return
-```
-<!-- .element: class="fragment" -->
-
-
 <!-- .slide: data-background="./images/bg/weave.jpg" -->
 # Important note on performance
 <!-- .element: class="white-bg" -->
-
-
-<!-- .slide: data-background="./images/bg/weave.jpg" -->
-<div class="white-bg">
-<div>
-"Premature optimization is the root of all evil." <!-- .element: class="quote" -->
-</div>
-
-<div class="attribution">
-Donald E. Knuth [Structured Programming With `go to` Statements](https://web.archive.org/web/20130731202547/http://pplab.snu.ac.kr/courses/adv_pl05/papers/p261-knuth.pdf)
-</div>
-</div>
-
-
-<!-- .slide: data-background="./images/bg/weave.jpg" -->
-<div>
-<div>
-"We should forget about small efficiencies, say about 97% of the time: premature optimization is the root of
-all evil. Yet we should not pass up our opportunities in that critical 3%."
-<!-- element: class="quote" -->
-</div>
-
-<div>
-Donald E. Knuth
-[Structured Programming With `go to` Statements](https://web.archive.org/web/20130731202547/http://pplab.snu.ac.kr/courses/adv_pl05/papers/p261-knuth.pdf)
-</div><!-- .element: class="attribution" -->
-</div><!-- .element: class="white-bg" -->
