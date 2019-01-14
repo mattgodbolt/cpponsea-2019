@@ -13,7 +13,7 @@
 
 void incSquareCount(int count);
 
-int sumFunc(const vector<int> &v)
+int sumSquared(const vector<int> &v)
 {
   int res = 0;
   for (auto i : v) 
@@ -47,6 +47,29 @@ int sumFunc(const vector<int> &v,
   int res = 0;
   for (auto i : v) res += func(i);
   return res;
+}
+```
+
+
+```cpp
+// setup
+/// g82:-O3 -march=haswell
+  #include <vector>
+  using namespace std;
+
+///hide
+struct Adder {
+  int mTotal = 0;
+  void add(const vector<int> &arr);
+};
+///unhide
+
+void Adder::add(const vector<int> &arr)
+{
+  for (auto val : arr)
+  {
+      mTotal += val;
+  }
 }
 ```
 

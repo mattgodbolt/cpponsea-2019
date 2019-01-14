@@ -39,12 +39,19 @@
                 }
             }
         }
-        while (displaySource.startsWith("\n")) {
-            displaySource = displaySource.slice(1, displaySource.length);
+
+        function trim(source) {
+            while (source.startsWith("\n")) {
+                source = source.slice(1, source.length);
+            }
+            while (source.endsWith("\n\n")) {
+                source = source.slice(0, source.length - 1);
+            }
+            return source;
         }
-        while (displaySource.endsWith("\n\n")) {
-            displaySource = displaySource.slice(0, displaySource.length - 1);
-        }
+
+        displaySource = trim(displaySource);
+        source = trim(source);
         options += " -Wall -Wextra -pedantic";
         let content = [];
         content.push({

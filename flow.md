@@ -5,8 +5,8 @@
 
 
 ```cpp
-// setup
 /// g82:-O3 -march=haswell
+// setup
   #include <array>
   using namespace std;
 static int totalA = 0;
@@ -28,36 +28,19 @@ void add(bool isA, const IntArray &arr)
 
 
 ```cpp
-// setup
 /// g82:-O3 -march=haswell
+// setup
   #include <array>
+  #include <numeric>
   using namespace std;
-
-///hide
-using IntArray = array<int, 32>;
-struct Adder {
-  int mTotalA = 0;
-  int mTotalB = 0;
-  void add(bool isA, const IntArray &arr);
-};
-///unhide
-
-void Adder::add(bool isA, const IntArray &arr)
+int sumSquared(const std::array<int, 32> &i)
 {
-  for (auto val : arr)
-  {
-    if (isA)
-    {
-      mTotalA += val;
-    } else {
-      mTotalB += val;
-    }
-  }
+  return std::accumulate(
+      begin(i), end(i), 
+      0,
+      [](auto x, auto y)
+      {
+        return x + y * y;
+      });
 }
 ```
-
-### TODO
-    
-explain why
-aliasing!
-visibility https://godbolt.org/z/N32WaR argh
