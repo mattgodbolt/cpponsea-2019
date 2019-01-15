@@ -25,22 +25,3 @@ void add(bool isA, const IntArray &arr)
   }
 }
 ```
-
-
-```cpp
-/// g82:-O3 -march=haswell
-// setup
-  #include <array>
-  #include <numeric>
-  using namespace std;
-int sumSquared(const std::array<int, 32> &i)
-{
-  return std::accumulate(
-      begin(i), end(i), 
-      0,
-      [](auto x, auto y)
-      {
-        return x + y * y;
-      });
-}
-```

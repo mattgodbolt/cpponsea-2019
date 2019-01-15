@@ -31,9 +31,9 @@ void LightObject(Renderable *object)
   auto ms = pos * world.Invert();
   ...
 ```
-<!-- .element: class="w50" -->
+<!-- .element: class="w55" -->
 
-<div class="w50 fragment">
+<div class="w45 fragment">
 <img src="./images/swat-outdoor-scene.jpeg">
 </div>
 
