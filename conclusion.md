@@ -16,8 +16,43 @@
 <ul>
 <li>Trust your compiler</li>
 <li>Don't compromise readability</li>
-<li>Be aware of compiler limitations</li> 
+<li class="fragment">Be aware of compiler limitations:
+<ul>
+<li>Aliasing</li>
+<li>Visibility</li>
+<li>Structure Layout</li>
+<li>Algorithms</li>
 </ul>
+</li> 
+</ul>
+</div>
+
+
+<div class="white-bg">
+<h3>Conclusion - aliasing</h3>
+<ul>
+<li>Use type system</li>
+<li>Pass values</li>
+<li>Avoid "raw" loops</li>
+<li>(`__restrict` as last resort)</li>
+</ul>
+</div>
+
+
+<div class="white-bg">
+<h3>Conclusion - visibility</h3>
+<ul>
+<li>"Unknown" calls inhibit optimisations</li>
+<li>`[[gnu::pure]]`, `[[gnu::const]]`</li>
+<li>Speculative devirtualisation</li>
+<li>Link Time Optimization</li>
+</ul>
+</div>
+
+
+<div class="white-bg">
+<h3>Conclusion - the rest</h3>
+<p>Compiler can't save you from bad algorithms or bad data layout</p>
 </div>
 
 

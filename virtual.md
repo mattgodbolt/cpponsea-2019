@@ -5,21 +5,14 @@
 
 
 ```cpp
-/// g82:-O3 -march=haswell
-// setup
-  #include <vector>
-  #include <numeric>
-  using namespace std;
+/// clang700:-O2 -march=haswell
+int square(int num);
 
-void incSquareCount(int count);
-
-int sumSquared(const vector<int> &v)
-{
+int func(int x, int y) {
   int res = 0;
-  for (auto i : v) 
+  for (int i = 0; i < x; ++i)
   {
-    res += i * i;
-    incSquareCount(1);
+    res += square(y);
   }
   return res;
 }
@@ -64,7 +57,8 @@ struct Adder {
 };
 ///unhide
 
-void Adder::add(const vector<int> &arr)
+void Adder::add(
+    const vector<int> &arr)
 {
   for (auto val : arr)
   {
@@ -81,4 +75,21 @@ struct Magic {
   int c;
   void *d;
 };
+```
+
+
+```cpp
+// setup
+  #include <algorithm>
+  #include <random>
+  #include <vector>
+  using namespace std;
+void mySort(vector<int> &v) {
+  mt19937 mt(random_device{}());
+  while (!is_sorted(
+      begin(v), end(v)))
+  {
+    shuffle(begin(v), end(v), mt);
+  }
+}
 ```

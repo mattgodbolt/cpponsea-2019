@@ -155,3 +155,26 @@ func:                       ; edi is "val"   rsi is "ptr"
     </tr>
     </tbody>
 </table>
+
+---
+
+```cpp
+/// g82:-O3 -march=haswell
+// setup
+  #include <vector>
+  #include <numeric>
+  using namespace std;
+
+void incSquareCount(int count);
+
+int sumSquared(const vector<int> &v)
+{
+  int res = 0;
+  for (auto i : v) 
+  {
+    res += i * i;
+    incSquareCount(1);
+  }
+  return res;
+}
+```

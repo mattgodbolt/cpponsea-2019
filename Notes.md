@@ -413,4 +413,61 @@ $ objdump -d /usr/bin/node -Mintel --no-show-raw-insn  | grep -E '  [0-9a-f]+:' 
    general it's probably better to focus on less and refine that better.  At any rate, I'm thinking 
    something like https://gcc.gnu.org/onlinedocs/gccint/Passes.html
    ""
-"
+
+Meta notes:
+* remember to mention most common instructions are from a static count
+* confirm "latency" vs throughput
+* mention fmadd is even different accuracy from + and * each
+* Herb: "Don't pessimize prematurely"
+* Add benchmark tool slide/info
+* Mention LTO
+* Compilers less awesome at: (but will get better), and will never get better
+  - add section what you can do to avoid problems, "aliasing" vs "give compile info it needs" (LTO?))
+* Overview slide?
+  - I think not; trying to keep a bit of intrigue. Hopefully interruptions won't be a problem
+* IR?
+  - probably not, enough work here already
+  
+ ---
+ 
+ Raw instr executed, 30s "idleish" laptop:
+ 
+ ```bash
+$ perf record -a -- sleep 30
+$ perf annotate --stdio -Mintel -n | grep -E '\s+[1-9][0-9]* : ' | awk '{print $4}' | sort | uniq -c | sort -nr
+ 
+1     3241 mov
+2      997 push
+3      800 jmp
+4      609 cmp
+5      396 test
+6      365 call
+7      346 add
+8      271 sub
+9      259 je
+10     255 movzx
+11     243 pop
+12     222 lea
+13     205 jne
+14     187 ret
+15     168 lock
+16     115 xor
+17      90 movsxd
+18      78 and
+19      73 vmovdqu
+20      65 mfence
+      37 shr
+      35 vpcmpeqb
+      33 shl
+      30 div
+      28 syscall
+      27 leave
+      26 ja
+      24 jbe
+      22 vzeroupper
+      22 or
+      21 sar
+      21 jg
+      21 jb
+      20 repz
+```

@@ -146,3 +146,12 @@ And many, many more...
 <!-- .slide: data-background="./images/bg/weave.jpg" -->
 # Important note on performance
 <!-- .element: class="white-bg" -->
+
+<div class="fragment white-bg">
+<ul>
+<li><a href="https://github.com/google/benchmark">Google Benchmark</a></li>
+<li><a href="https://github.com/nickbruun/hayai">hayai</a></li>
+<li><a href="https://github.com/rmartinho/nonius">Nonius</a></li>
+<li><a href="http://quick-bench.com/">Quick Bench</a></li>
+</ul>
+</div>

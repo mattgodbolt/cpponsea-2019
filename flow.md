@@ -12,7 +12,8 @@
 static int totalA = 0;
 static int totalB = 0;
 using IntArray = array<int, 32>;
-void add(bool isA, const IntArray &arr)
+void add(bool isA, 
+         const IntArray &arr)
 {
   for (auto val : arr)
   {

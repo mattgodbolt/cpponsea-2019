@@ -24,9 +24,10 @@ int mulBy65599(int a)
 ```
 
 
-```cpp
-int divide(int x, int y)
-{
-  return x / y;
-}
-```
+<div class="white-bg">
+<ul>
+<li>Division</li>
+<li>Modulus</li>
+<li>Sums</li>
+</ul>
+</div>
