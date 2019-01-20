@@ -356,3 +356,61 @@ $ objdump -d /usr/bin/node -Mintel --no-show-raw-insn  | grep -E '  [0-9a-f]+:' 
   - 33m at "no raw loops"
   - (maybe should switch control flow and aliasing)
   - 46m __restrict
+
+---
+# Runthrough 15th Jan at Chicago C++ Meetup
+- 1hr20ish (had questions throughout and some tech issues)
+- Probably should defer questions to the end
+- probably should kill "divide" slide?
+- despite misgivings the "flow control" segued into speculative devirt
+- Argh managed to call crowd "guys" :( work...on...saying... "people" or "folks" or "fellow humans" or anything but that 
+- Feedback:
+  - At end "know your compilers limitations":
+    - probably some clarity on what the limitations are
+    - maybe break down the "less awesome" section into: aliasing, "assuming the worst", physical layout (?)
+  - From BVV:
+
+  "You might want to avoid ambiguity and mention if your top 20 instructions are a static count (assumed) or dynamic fo
+  some typical workload. Would be interesting to compare how the list changes from static to dynamic.
+  You mentioned that multiply was slower than add, but again, you might want to avoid ambiguity by specifying that you're
+  referring to latency not throughput. At least I think that's still true. I haven't checked Agner Fog's tables in a 
+  while, but I think add, subtract, and multiply can retire at a rate of one per cycle. However, there sure could be 
+  more stages in the multiply pipeline.
+
+  "You made good points about possible loss of precision when commuting arguments to addition. I had never thought about
+  how that could impact accumulate, so that was interesting.
+
+  "If I remember right, they take some pains when implementing the fused multiply and add instructions (like vfmadd231ps
+  that you mentioned) so that rounding bits from the result of the multiply are carried through to the add. So I think
+  you could in some cases get a different result than you would from discrete multiply and add instructions.
+
+  "And one bit of obscurantism: you could use the "fused" interrobang Unicode character on your slide titled ASSEMBLY‽‽
+  instead of the discrete ? and !. But be wary of PDF exports or PPT conversions that might mangle it.
+  Probably not worth the risk."
+
+  - From DD:
+  "The main take-away seemed to be aligned with what has been pushed for some time now (and yet many better programmers
+   often ignore): Don't optimize prematurely.  However, I like Herb's 101 Rules book, where the next chapter is 
+   "Don't pessimize prematurely."  I walked away from the talk wondering "what could I be doing that would (not break 
+   the readability and...) help the compilers produce more optimal code?"
+   This was talked about in a few specific cases, but I'm wondering if there's any general advice, or short of that, a
+   few pieces of specific advice (like, ordering variables from largest to smallest) that we should walk away with that
+   you could highlight throughout and at the end of the talk.
+   It may be worth adding a quick slide to show good/common benchmarking tools for when you make the point that compiler
+   explorer isn't for the purpose of optimizing code.
+   When presenting the thing compilers are "less awesome" at, it may be good to differentiate between "Things compilers
+   likely won't be able to do" and "Things compilers aren't doing yet."  It seemed most of the presentation was on the
+   latter group.  In other words, a shift in the way the topic is approached slightly.
+   I really liked your brief overview of the assembly instructions, that made the rest of the talk much more accessible
+   to those of us who don't dive into assembly very often.
+   I liked the live compiler-explorer use, but when comparing outputs from two similar sets of code I wonder if the
+   comparison could be better shown on a slide, at least in some cases.  Perhaps using some common diff output
+   when appropriate.
+   An overview slide for each section may be helpful (and avoid those pesky questions about things that are covered on
+   the very next slide).
+   Something that wasn't covered at all is the intermediate representation, or anything about how the compiler gets 
+   rom c++ to assembly.  A brief overview of that could enhance the talk.  I do hesitate to say "add more!" because, in
+   general it's probably better to focus on less and refine that better.  At any rate, I'm thinking 
+   something like https://gcc.gnu.org/onlinedocs/gccint/Passes.html
+   ""
+"
