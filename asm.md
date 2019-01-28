@@ -144,7 +144,7 @@ And many, many more...
 
 
 <!-- .slide: data-background="./images/bg/weave.jpg" -->
-# Important note on performance
+## Important note on performance
 <!-- .element: class="white-bg" -->
 
 <div class="fragment white-bg">

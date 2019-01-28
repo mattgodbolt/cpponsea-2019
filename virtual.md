@@ -84,6 +84,7 @@ struct Magic {
   #include <random>
   #include <vector>
   using namespace std;
+
 void mySort(vector<int> &v) {
   mt19937 mt(random_device{}());
   while (!is_sorted(
