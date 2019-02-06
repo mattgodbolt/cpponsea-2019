@@ -81,8 +81,8 @@
         };
         let ceFragment = encodeURIComponent(JSON.stringify(obj));
 
-        const isPdf = !!window.location.search.match(/print-pdf/gi);
-        const baseUrl = isPdf ? 'https://godbolt.org/' : 'http://localhost:10240/';
+        const isLocal = !!window.location.host.match(/localhost/gi);
+        const baseUrl = isLocal ? 'http://localhost:10240/' : 'https://godbolt.org/';
 
         element.onclick = (evt) => {
             if (evt.ctrlKey) {
