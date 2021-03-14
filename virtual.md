@@ -1,6 +1,5 @@
 <div class="white-bg">
-<h2>Compilers Less Awesome At...</h2>
-<h2 class="fragment">Reading Minds</h2>
+<h2>Virtual Method Tidbits!</h2>
 </div>
 
 

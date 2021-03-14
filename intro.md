@@ -14,10 +14,6 @@ I'm accidentally a verb <!-- .element: class="fragment" -->
 <!-- .element: class="white-bg" -->
 
 
-## What _is_ a compiler?
-<!-- .element: class="white-bg" -->
-
-
 ```cpp
 void LightObject(Renderable *object)
 {
@@ -42,26 +38,29 @@ void LightObject(Renderable *object)
 template<typename T>
 auto thingy(T &&t)
 {
-  auto blether = t.fronk();
-  if (blether < T::min())
+  auto bongo = t.fronk();
+  if (bongo < T::min())
   {
     return t.badger();
   } else {
-    return t.blenkinsop();
+    return t.smeagol();
   }
 }
 ```
 <!-- .element: class="w40" -->
 
 ```
-In instantiation of 'auto thingy(T&&) [with T = Marmoset]':
-error: 'struct Marmoset' has no member named 'fronk'
-   auto blether = t.fronk();
+In instantiation of 'auto thingy(T&&)
+  [with T = Marmoset]':
+error: 'struct Marmoset' has no member 
+    named 'fronk'
+   auto bongo = t.fronk();
                   ~~^~~~~
 error: 'min' is not a member of 'Marmoset'
-   if (blether < T::min())
+   if (bongo < T::min())
                  ~~~~~~^~
-error: 'struct Marmoset' has no member named 'badger'
+error: 'struct Marmoset' has no member
+    named 'badger'
      return t.badger();
             ~~^~~~~~
 ...

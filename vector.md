@@ -1,6 +1,5 @@
 <div class="white-bg">
-<h2>Compilers Are Awesome At...</h2>
-<h2 class="fragment">Vectorization!</h2>
+<h2>Vectorization Tidbits!</h2>
 </div>
 
 
@@ -39,7 +38,7 @@ int sumSquared(const vector<int> &v)
          index += 8)
     {
       for (size_t j = 0; j < 8; ++j)
-      {
+      {  // but this happens in one instruction...
         auto val = v[index + j];
         res_[j] += val * val;
       }

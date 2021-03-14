@@ -3,7 +3,7 @@
 
 <ul>
 <li class="fragment">Compilers are cleverer than we are
-  <ul><li class="fragment">unless you're a compiler writer</li></ul>
+  <ul><li class="fragment">if they have the right information</li></ul>
 </li>
 <li class="fragment">Assembly isn't <em>that</em> scary
 </ul>

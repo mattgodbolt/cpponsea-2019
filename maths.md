@@ -1,6 +1,5 @@
 <div class="white-bg">
-<h2>Compilers Are Awesome At...</h2>
-<h2 class="fragment">Maths!</h2>
+<h2>Math Tidbits!</h2>
 </div>
 
 
@@ -24,10 +23,31 @@ int mulBy65599(int a)
 ```
 
 
-<div class="white-bg">
-<ul>
-<li>Division</li>
-<li>Modulus</li>
-<li>Sums</li>
-</ul>
-</div>
+```cpp
+int divideBy16(int a)
+{
+  return a >> 4;
+}
+```
+
+
+```cpp
+unsigned sumUpTo(unsigned x)
+{
+  auto total = 0u;
+  for (auto i = 0u; i < x; ++i)
+  {
+    total += i;
+  }
+  return total;
+}
+```
+
+
+```cpp
+unsigned sumUpTo(unsigned x)
+{
+  // equivalent to x(x+1)/2
+  return ((x - 1) * (x - 2) / 2) + x - 1;
+}
+```
