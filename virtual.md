@@ -1,5 +1,5 @@
 <div class="white-bg">
-<h2>Virtual Method Tidbits!</h2>
+<h2>Function Call Tidbits!</h2>
 </div>
 
 
@@ -68,16 +68,6 @@ void Adder::add(
 
 
 ```cpp
-struct Magic {
-  bool a;
-  double b;
-  int c;
-  void *d;
-};
-```
-
-
-```cpp
 // setup
   #include <algorithm>
   #include <random>
@@ -86,8 +76,8 @@ struct Magic {
 
 void mySort(vector<int> &v) {
   mt19937 mt(random_device{}());
-  while (!is_sorted(
-      begin(v), end(v)))
+  
+  while (!is_sorted(begin(v), end(v)))
   {
     shuffle(begin(v), end(v), mt);
   }
