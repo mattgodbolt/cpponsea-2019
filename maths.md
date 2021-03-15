@@ -26,7 +26,7 @@ int mulBy65599(int a)
 ```cpp
 int divideBy16(int a)
 {
-  return a >> 4;
+  return a >> 4;  // clearly can't trust the compiler to do this for me
 }
 ```
 
