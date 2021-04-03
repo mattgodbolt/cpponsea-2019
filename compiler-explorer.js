@@ -61,7 +61,7 @@
                 id: 1,
                 source: source,
                 options: {compileOnChange: true, colouriseAsm: true},
-                fontScale: 2.5
+                fontScale: 3
             }
         });
         content.push({
@@ -72,7 +72,7 @@
                 filters: {commentOnly: true, directives: true, intel: true, labels: true, trim: true},
                 options: options,
                 compiler: compiler,
-                fontScale: 3.0
+                fontScale: 3.5
             }
         });
         let obj = {

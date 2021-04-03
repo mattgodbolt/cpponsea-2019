@@ -10,6 +10,13 @@ I'm accidentally a verb <!-- .element: class="fragment" -->
 </div><!-- .element: class="white-bg" -->
 
 
+<div>
+![Aquatic](https://aquatic.com/img/AquaticLogo.svg) <!-- .element: class="no-border stretch white-bg" -->
+<div>https://aquatic.com/</div>
+<div>Always looking for talented folks!</div>
+</div><!-- .element: class="white-bg" -->
+
+
 ## Compilers Are Amazing!!
 <!-- .element: class="white-bg" -->
 
