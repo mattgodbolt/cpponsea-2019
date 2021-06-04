@@ -18,8 +18,8 @@
 <li>Don't compromise readability</li>
 <li class="fragment">Be aware of compiler limitations:
 <ul>
-<li>Aliasing</li>
 <li>Visibility</li>
+<li>(and aliasing)</li>
 </ul>
 </li> 
 </ul>
