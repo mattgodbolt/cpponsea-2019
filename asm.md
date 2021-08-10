@@ -10,7 +10,7 @@
 Ash nazg durbatulûk, ash nazg gimbatul,
 Ash nazg thrakatulûk agh burzum-ishi krimpatul.
 </aside>
-
+</div>
 
 ### x86-64 Assembly
 <!--- .element: class="white-bg" -->
@@ -152,6 +152,6 @@ And many, many more...
 <li><a href="https://github.com/google/benchmark">Google Benchmark</a></li>
 <li><a href="https://github.com/nickbruun/hayai">hayai</a></li>
 <li><a href="https://github.com/rmartinho/nonius">Nonius</a></li>
-<li><a href="http://quick-bench.com/">Quick Bench</a></li>
+<li><a href="https://quick-bench.com/">Quick Bench</a></li>
 </ul>
 </div>
